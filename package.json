@@ -1,0 +1,29 @@
+{
+  "name": "proxy-cli",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start serverA": "nodemon ./server/api-serve/serverA/index.js",
+    "start dev": "node ./build/dev/index.js",
+    "start middle serve": "ts-node server/middle-serve/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa-router": "^7.4.8",
+    "html-webpack-plugin": "5.6.0",
+    "koa": "2.15.3",
+    "koa-router": "12.0.1",
+    "koa2-cors": "2.0.6",
+    "portfinder": "^1.0.32",
+    "ts-node": "10.2.1",
+    "typescript": "^5.4.5",
+    "webpack": "5.91.0",
+    "webpack-dev-server": "4.15.2"
+  },
+  "volta": {
+    "node": "16.14.2"
+  }
+}

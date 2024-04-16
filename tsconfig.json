@@ -1,0 +1,19 @@
+{
+  "include": ["server/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "ESNext",   
+    // 为es模块添加导入辅助函数 https://zhuanlan.zhihu.com/p/148081795
+    "esModuleInterop": true,
+    // 模块解析策略 https://ts.nodejs.cn/tsconfig#moduleResolution
+    // https://juejin.cn/post/7221551421833314360
+    "moduleResolution": "node16", 
+  },
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as our --compilerOptions flag and our TS_NODE_COMPILER_OPTIONS environment variable
+    "compilerOptions": {
+      "module": "CommonJS",
+    }
+  }
+}
