@@ -4,16 +4,22 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start serverA": "nodemon ./server/api-serve/serverA/index.js",
-    "start dev": "node ./build/dev/index.js",
-    "start middle serve": "ts-node server/middle-serve/index.ts"
+    "start api server": "nodemon ./server/start.js",
+    "start run-dev-server": "ts-node build/dev/index.ts",
+    "----------------------": "----------------------",
+    "start connection-server": "ts-node build/dev/connection-server/index.ts",
+    "start middle-server": "ts-node build/dev/middle-server/index.ts"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/koa": "^2.15.0",
     "@types/koa-router": "^7.4.8",
+    "@types/koa2-cors": "^2.0.5",
+    "express": "^4.19.2",
     "html-webpack-plugin": "5.6.0",
+    "http-proxy-middleware": "^2.0.1",
     "koa": "2.15.3",
     "koa-router": "12.0.1",
     "koa2-cors": "2.0.6",

@@ -5,15 +5,27 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@types/express':
+    specifier: ^4.17.21
+    version: 4.17.21
   '@types/koa':
     specifier: ^2.15.0
     version: 2.15.0
   '@types/koa-router':
     specifier: ^7.4.8
     version: 7.4.8
+  '@types/koa2-cors':
+    specifier: ^2.0.5
+    version: 2.0.5
+  express:
+    specifier: ^4.19.2
+    version: 4.19.2
   html-webpack-plugin:
     specifier: 5.6.0
     version: 5.6.0(webpack@5.91.0)
+  http-proxy-middleware:
+    specifier: ^2.0.1
+    version: 2.0.1
   koa:
     specifier: 2.15.3
     version: 2.15.3
@@ -225,6 +237,12 @@ packages:
 
   /@types/koa-router@7.4.8:
     resolution: {integrity: sha512-SkWlv4F9f+l3WqYNQHnWjYnyTxYthqt8W9az2RTdQW7Ay8bc00iRZcrb8MC75iEfPqnGcg2csEl8tTG1NQPD4A==}
+    dependencies:
+      '@types/koa': 2.15.0
+    dev: true
+
+  /@types/koa2-cors@2.0.5:
+    resolution: {integrity: sha512-MrZ8NpnkPYQqTRy2Llflt2f2sLTQTSy5fAOa2YTxUu6UJZXdsY6cszpzuB9EhkAFXJL1D8kEEHGq4Q7rU+jEAg==}
     dependencies:
       '@types/koa': 2.15.0
     dev: true
@@ -1321,6 +1339,19 @@ packages:
 
   /http-parser-js@0.5.8:
     resolution: {integrity: sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==}
+    dev: true
+
+  /http-proxy-middleware@2.0.1:
+    resolution: {integrity: sha512-cfaXRVoZxSed/BmkA7SwBVNI9Kj7HFltaE5rqYOub5kWzWZ+gofV2koVN1j2rMW7pEfSSlCHGJ31xmuyFyfLOg==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      '@types/http-proxy': 1.17.14
+      http-proxy: 1.18.1
+      is-glob: 4.0.3
+      is-plain-obj: 3.0.0
+      micromatch: 4.0.5
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /http-proxy-middleware@2.0.6(@types/express@4.17.21):
