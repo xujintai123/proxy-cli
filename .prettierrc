@@ -1,0 +1,9 @@
+{
+    "?semi": "句末使用分号",
+    "semi": true,
+    "singleQuote": true,
+    "?tabWidth": "缩进长度",
+    "tabWidth": 4,
+    "?printWidth": "单行长度",
+    "printWidth": 120
+}

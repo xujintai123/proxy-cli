@@ -28,6 +28,7 @@
     "koa2-cors": "2.0.6",
     "lint-staged": "^13.3.0",
     "portfinder": "^1.0.32",
+    "prettier": "3.2.5",
     "ts-node": "10.2.1",
     "typescript": "^5.4.5",
     "webpack": "5.91.0",

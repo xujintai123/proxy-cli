@@ -1,4 +1,3 @@
-
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
@@ -8,8 +7,7 @@ import { proxyDataManager } from '../connection-server/data/proxy-data';
 
 const app = express();
 
-
-export async function initMiddleServer() {
+export async function createMiddleServer() {
     const port = await proparehost();
 
     const proxy = createProxyMiddleware({
@@ -24,7 +22,6 @@ export async function initMiddleServer() {
     // 通配符匹配 https://www.jianshu.com/p/3fa7c6a941f4
     app.use('*', proxy);
 
-
     app.listen(port, () => {
         console.log(`MiddleServer started on ${port}`);
     });
@@ -32,5 +29,5 @@ export async function initMiddleServer() {
     return {
         port,
         host: 'http://127.0.0.1', // 中间代理服务的host固定为 http://127.0.0.1 不会有什么影响
-    }
+    };
 }
