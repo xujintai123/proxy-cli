@@ -6,7 +6,7 @@ import { proxyDataManager } from './data/proxy-data';
 const app = new Koa();
 const router = new Router();
 
-const connectionServerPort = 25561;
+const connectionServerPort = 25501;
 
 export async function createConnectionServer() {
     // Koa允许跨域
@@ -44,4 +44,8 @@ export async function createConnectionServer() {
     app.listen(connectionServerPort, () => {
         console.log(`server started on ${connectionServerPort}`);
     });
+
+    return {
+        connectionServerPort,
+    };
 }

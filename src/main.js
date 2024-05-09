@@ -19,7 +19,7 @@ async function changeProxyTarget() {
     // 请求切换代理的服务，将最新的代理值更新
     const data = await request({
         method: 'GET',
-        url: `http://localhost:25560/change/proxy?target=${inputRef.value}`,
+        url: `http://localhost:${process.env.CONNECTION_PORT}/change/proxy?target=${inputRef.value}`,
     });
     const result = JSON.parse(data);
 

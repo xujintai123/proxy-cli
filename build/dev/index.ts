@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import webpackDevServer from 'webpack-dev-server';
 import path from 'path';
+import { merge as webpackMerge } from 'webpack-merge';
 
 import { createConnectionServer } from './connection-server';
 import { createMiddleServer } from './middle-server';
@@ -8,13 +9,21 @@ import { proparehost } from './utils/propare-host';
 
 const runDevServer = async () => {
     const webpackConfig = require(path.resolve(__dirname, '../../webpack.config.js'));
-    const compiler = webpack(webpackConfig);
 
     // 启动代理服务
     const { port: proxyPort, host: proxyHost } = await createMiddleServer();
 
-    // 启动连接服务（用于将用户切换的代理地址更新到私有变量）
-    await createConnectionServer();
+    const { connectionServerPort } = await createConnectionServer();
+
+    const compiler = webpack(
+        webpackMerge(webpackConfig, {
+            plugins: [
+                new webpack.DefinePlugin({
+                    'process.env.CONNECTION_PORT': JSON.stringify(connectionServerPort),
+                }),
+            ],
+        }),
+    );
 
     const devServerPort = await proparehost();
 
